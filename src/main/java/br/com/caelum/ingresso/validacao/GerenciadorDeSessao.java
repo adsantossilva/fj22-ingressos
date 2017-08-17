@@ -7,14 +7,14 @@ import java.util.Optional;
 import br.com.caelum.ingresso.model.Sessao;
 
 public class GerenciadorDeSessao {
-	private List<Sessao> sessoesDasala;
+	private List<Sessao> sessoesDaSala;
 	
 	public GerenciadorDeSessao(List<Sessao> sessoesDaSala){
-		this.sessoesDasala = sessoesDasala;
+		this.sessoesDaSala = sessoesDaSala;
 	}
 	
 	public boolean cabe(final Sessao sessaoAtual){
-		Optional<Boolean> optionalCabe = sessoesDasala
+		Optional<Boolean> optionalCabe = sessoesDaSala
 				.stream()
 				.map(sessaoExistente -> 
 				    horarioIsValido(sessaoExistente, sessaoAtual))
